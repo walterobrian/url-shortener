@@ -25,7 +25,7 @@ export default async ({ res, req, log, error }) => {
 
     const urlEntry = await appwrite.createURLEntry(
       req.body.url,
-      // req.body.shortCode ?? generateShortCode()
+      req.body.shortCode ?? generateShortCode()
     );
     if (!urlEntry) {
       error('Failed to create url entry.');
